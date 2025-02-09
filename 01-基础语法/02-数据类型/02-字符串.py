@@ -78,3 +78,42 @@ from string import Template
 # 使用 Template 构造一个模板
 str5 = Template("我的名字叫$name, 我今年$age岁了")
 print(str5.safe_substitute(name = "枫叶红", age = 56))
+
+print('\033[91m----------------------------------------------------------------------------------------------\033[0m')
+
+str1 = "heLLo"
+
+"""
+    str.capitalize()
+        将字符串的第1个字符大写,其余字母会变为小写
+"""
+print(str1.capitalize())  # Hello
+
+"""
+    str.center()
+        返回一个指定的宽度 width 居中的字符串
+        如果 width 小于字符串宽度直接返回字符串
+        否则使用 指定的字符(只能是单字符) 去填充
+"""
+print(str1.center(10, "-"))  # --heLLo---
+
+"""
+    str.join(sequence)
+        返回通过指定字符连接序列中元素后生成的新字符串
+"""
+print("".join(["A", "B", "C"]))  # ABC
+print("=".join(["A", "B", "C"]))  # A=B=C
+
+"""
+    str.strip([chars])
+        返回移除字符串头尾指定的字符序列生成的新字符串
+"""
+print(" weirjwekj ".strip(" "))  # weirjwekj
+# 可以看到，只去除了两边的指定字符，中间的字符并没有被删除
+print("*wei**rjwekj**".strip("*"))  # wei**rjwekj
+
+"""	
+    str.isdigit()
+        如果字符串只包含数字则返回 True 否则返回 False
+"""
+print("1234".isdigit())  # True

@@ -34,3 +34,19 @@ print(d, type(d))  # (4+3j) <class 'complex'>
 num1 = 100
 if isinstance(num1, int):
     print('num1变量是一个int类型的数据')
+
+# 使用max函数获取最大值
+res1 = max(1, 2, 3, 4)
+print(res1)  # 4
+
+# 获取列表中的最大值
+res2 = max([1, 2, 5, 10])
+print(res2)  # 10
+
+# 使用min获取元组中的最小值
+res3 = min((1, 20, 100))
+print(res3)  # 1
+
+# 使用min获取集合中的最小值
+res4 = min({99, 100, 200})
+print(res4)  # 99

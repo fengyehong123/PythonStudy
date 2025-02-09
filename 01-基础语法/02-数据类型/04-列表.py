@@ -39,3 +39,63 @@ print(list1[0])  # 贾飞天
 # ⭕批量修改列表的第2到第4个元素
 list1[1:4] = ['张三', '李四', '王五']
 print(list1)  # ['贾飞天', '张三', '李四', '王五', [1, 3, 5]]
+
+print('\033[91m----------------------------------------------------------------------------------------------\033[0m')
+
+list3 = [11, 12, 12]
+
+# 向列表中添加元素
+list3.append(13)
+print(list3)  # [11, 12, 12, 13]
+
+# 统计列表的元素数量
+print(len(list3))  # 4
+
+# 统计某个元素在列表中出现的次数
+print(list3.count(12))  # 2
+
+# 向列表的末尾一次性追加多个值
+list3.extend(list(range(99, 101)))
+print(list3)  # [11, 12, 12, 13, 99, 100]
+
+# 查找对应元素的下标
+print(list3.index(99))  # 4
+
+# 向第1个下标插入数据
+list3.insert(0, {"name": '你好'})
+print(list3)  # [{'name': '你好'}, 11, 12, 12, 13, 99, 100]
+
+# 移除列表的一个值，并返回(默认移除最后一个值)
+res1 = list3.pop()
+print(list3)  # [{'name': '你好'}, 11, 12, 12, 13, 99]
+print(res1)  # 100
+
+# 移除列表的下标为0的元素，并返回值
+res2 = list3.pop(0)
+print(list3)  # [11, 12, 12, 13, 99]
+print(res2)  # {'name': '你好'}
+
+list4 = ['百度', '谷歌', '百度', '必应', '搜狗']
+
+# remove只会移除第一个被匹配到的值
+list4.remove('百度')
+print(list4)
+
+# 列表的复制
+print(list4.copy())  # ['谷歌', '百度', '必应', '搜狗']
+print(list4[:])  # ['谷歌', '百度', '必应', '搜狗']
+
+# 清空列表
+list4.clear()
+print(len(list4))  # 0
+
+# 引入比较模块
+import operator
+
+lia = [1, 2, 3]
+lib = [1, 2, 3]
+lic = ['1', '2', '3']
+
+# 列表的比较
+print(operator.eq(lia, lib))  # True
+print(operator.eq(lia, lic))  # False
