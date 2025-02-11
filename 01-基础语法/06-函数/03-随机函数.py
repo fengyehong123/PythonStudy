@@ -45,3 +45,7 @@ def generate_password(length):
 # 调用函数生成一个6位数字的密码
 random_passwd = generate_password(6)
 print(random_passwd)  # Ed^%ba
+
+# 生成0到4的随机数
+for _ in range(random.randint(1, 4)):
+    print("hello world...")
