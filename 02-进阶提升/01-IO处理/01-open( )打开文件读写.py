@@ -3,7 +3,7 @@
         open(filename, mode, encoding)
 """
 
-filePath = "02-进阶提升/01-文件处理/test.txt"
+filePath = "02-进阶提升/01-IO处理/test.txt"
 file_content = """Python 是一个非常好的语言。
 是的，的确非常好!!"""
 
