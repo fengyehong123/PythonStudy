@@ -18,6 +18,7 @@ with tempfile.TemporaryFile(mode='w+', encoding='utf-8') as temp_file:
     temp_file.seek(0)  
     # 从开头读取数据
     print(temp_file.read())
+print('\033[91m-----------------------------------------------\033[0m')
 
 """
     创建临时文件，指定模式、编码、前缀、后缀等
@@ -45,3 +46,33 @@ with tempfile.NamedTemporaryFile(**temp_file_params) as temp_file:
 
     # 读取数据
     print(temp_file.read())
+print('\033[91m-----------------------------------------------\033[0m')
+
+"""
+    tempfile.mkstemp()
+        创建一个临时文件并返回文件描述符和路径。
+        它不会自动删除，适用于需要文件描述符的场景。
+"""
+fd, path = tempfile.mkstemp()
+print(f"临时文件路径: {path}")
+
+with open(fd, 'w+', encoding='utf-8') as f:
+    f.write("写入一些临时数据...")
+    f.seek(0)
+    print(f.read())
+print('\033[91m-----------------------------------------------\033[0m')
+
+"""
+    tempfile.mkdtemp()
+        创建一个临时目录并返回其路径。临时目录不会自动删除。
+"""
+temp_dir = tempfile.mkdtemp()
+print(f"临时目录路径: {temp_dir}")
+print('\033[91m-----------------------------------------------\033[0m')
+
+"""
+    tempfile.gettempdir()
+        返回系统使用的临时目录路径。
+"""
+temp_dir = tempfile.gettempdir()
+print(f"系统临时目录: {temp_dir}")

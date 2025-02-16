@@ -167,27 +167,3 @@ tuple3 = ('爱好', ['吃饭', '睡觉', '爬山'])
 # 通过可迭代对象的方式来创建字典
 dict7 = dict([tuple1, tuple2, tuple3])
 print(dict7)  # {'姓名': '李四', '年龄': '20', '爱好': ['吃饭', '睡觉', '爬山']}
-
-import tempfile
-
-# 将参数放入字典进行封装
-temp_file_params = {
-    'mode': 'w+',
-    'encoding': 'utf-8',
-    'prefix': 'my_temp_',
-    'suffix': '.txt',
-    'delete': False
-}
-# 通过 kwargs 的方式对字典进行解包，简化代码
-with tempfile.NamedTemporaryFile(**temp_file_params) as temp_file:
-
-    # 获取临时文件的路径
-    filePath = temp_file.name
-    print(f"临时文件名：{filePath}")
-
-    # 写入数据之后,将文件的指针放到文件的开头
-    temp_file.write(f"我是 → {filePath} 文件中的临时数据")
-    temp_file.seek(0)
-
-    # 读取数据
-    print(temp_file.read())
