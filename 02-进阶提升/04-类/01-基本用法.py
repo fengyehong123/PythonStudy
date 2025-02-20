@@ -38,6 +38,8 @@ class Person:
 
 # 创建一个类的实例对象
 person = Person("贾飞天", 18)
+# 获取属性字典
+print(person.__dict__)  # {'name': '贾飞天', '_hobby': ['吃饭', '睡觉', '打豆豆'], '_Person__age': 18}
 
 # 因为类的 __str__ 方法已经被重写, 因此我们打印类实例对象的输出内容是自定义的
 print(person)  # 姓名:贾飞天 → 年龄:18

@@ -65,3 +65,12 @@ def printInfo2(info1, info2, **dictInfo):
     print(f"参数info2的值为: {info2}")  # 参数info2的值为: 我好
     print(f"参数dictInfo的值为: {dictInfo}")  # 参数dictInfo的值为: {'key1': 123, 'key2': 'ppp', 'key3': [4, 5, 6]}
 printInfo2("你好", "我好", key1 = 123, key2 = "ppp", key3 = [4, 5, 6])
+print('\033[91m-----------------------------------------------\033[0m')
+
+# 🔴当函数返回多个值的时候，会自动封装为元组的形式返回
+def getInfoList():
+    return {"name": "贾飞天"}, 20, "你好"
+result1 = getInfoList()
+
+print(type(result1))  # <class 'tuple'>
+print(result1)  # ({'name': '贾飞天'}, 20, '你好')
