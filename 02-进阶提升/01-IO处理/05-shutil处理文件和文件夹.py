@@ -55,3 +55,16 @@ pathList = [
 for pathObj in pathList:
     # 文件删除
     pathObj.unlink()
+
+"""
+    shutil.copyfileobj() 
+        直接拷贝二进制数据，比 read() + write() 方式更快，减少 I/O 负担。
+"""
+def merge_csv_files(output_file, temp_files):
+
+    with open(output_file, mode='wb') as out_f:
+        # 将临时文件排序后循环打开，然后依次写入
+        for temp_file in sorted(temp_files):
+            with open(temp_file, mode='rb') as temp_f:
+                shutil.copyfileobj(temp_f, out_f)
+
